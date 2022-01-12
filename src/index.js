@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Inventory } from './store/Inventory'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+let store = new Inventory()
+store.addItem("Salma",25,3)
+console.log(store)
+ReactDOM.render(<App store={store}/>,document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

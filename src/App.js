@@ -1,11 +1,16 @@
+import { observer } from 'mobx-react'
+import { Component } from 'react';
 import './App.css';
+import Market from './components/Market';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <Market store={this.props.store} />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default observer(App);
