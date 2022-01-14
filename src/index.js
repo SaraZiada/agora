@@ -6,9 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import { Inventory } from './store/Inventory'
 
 let store = new Inventory()
-store.addItem("Salma",25,3)
+store.addItem("water", 11, 6)
 console.log(store)
-ReactDOM.render(<App store={store}/>,document.getElementById('root')
+ReactDOM.render( < App store = { store }
+    />,document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,3 +1,14 @@
 .App {
     text-align: center;
 }
+
+.newItem {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 15px;
+    margin: 15px;
+}
+
+input {
+    width: 150px;
+}
