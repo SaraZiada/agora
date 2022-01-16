@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Inventory } from './store/Inventory'
+import { Inventory} from './store/Inventory'
+import { Provider } from 'mobx-react';
 
-let store = new Inventory()
-store.addItem("water", 11, 6)
-console.log(store)
-ReactDOM.render( < App store = { store }
-    />,document.getElementById('root')
+let inventory = new Inventory()
+// Inventory.addItem("water",11,6)
+ReactDOM.render(<Provider Inventory={inventory}>
+    <App />
+    </Provider>,document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

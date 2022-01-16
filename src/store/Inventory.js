@@ -1,4 +1,4 @@
-import { observable, makeObservable, action } from 'mobx'
+import { observable, makeObservable, action, computed } from 'mobx'
 import { Item } from './Item'
 
 export class Inventory {
@@ -9,12 +9,15 @@ export class Inventory {
             items: observable,
             addItem: action,
             buyItem: action,
-            changePrice: action
+            changePrice: action,
+            numItems: computed
         })
     }
-
+    get numItems() {
+        return this.items.length;
+    }
     addItem = (name, price, quantity = 1) => {
-        let item = this.items.find(i => i.name === name)
+        let item = this.items.find(i => i.name === name && i.price === price)
         if (item !== undefined) {
             item.quantity += quantity
         } else {
